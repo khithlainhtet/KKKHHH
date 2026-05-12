@@ -7,7 +7,7 @@ from bot import db
 # Database Collection
 replies = db["auto_replies"]
 
-#
+# Railway Variable ထဲက OWNER_ID ကို ယူမယ် (မရှိရင် 0 လို့ ထားမယ်)
 OWNER_ID = int(os.environ.get("OWNER_ID", 0))
 
 @Client.on_message(filters.group & ~filters.bot)
