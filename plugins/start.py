@@ -11,7 +11,7 @@ WELCOME_STICKER = "CAACAgUAAxkBAAIe72mqfmL7cPOdiA5TOr6Gsih09cVTAALgGQACfA2YVRl1r
 @Client.on_message(filters.command("start") & filters.private)
 async def start_cmd(client: Client, message: Message):
     # 
-    text = "မဂ်လာပါ အချစ်လေး ပူတူးတူးလေး"
+    text = "ωєℓᴄᴏᴍᴇ вαву"
     typing_msg = await message.reply_text("...")
     
     display_text = ""
@@ -48,7 +48,7 @@ async def start_cmd(client: Client, message: Message):
     buttons = InlineKeyboardMarkup([
         [
             InlineKeyboardButton("Channel 📢", url="https://t.me/myanmarbot_music"),
-            InlineKeyboardButton("Developer 👨‍💻", url="http://t.me/HANTHAR999")
+            InlineKeyboardButton("Developer 👨‍💻", url="http://t.me/HANTHAR_1999")
         ],
         [
             InlineKeyboardButton("Group 👥", url="https://t.me/myanmar_music_Bot2027"),
