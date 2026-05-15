@@ -96,11 +96,11 @@ async def restore_clones(client: Client, message: Message):
         await start_clone_bot(data["token"])
     await msg.edit(f"✅ Clone Bot {len(running_clones)} ခုကို ပြန်နှိုးပြီးပါပြီ။")
 
-@Client.on_message(filters.command("broadcast") & filters.user(OWNER_ID))
+@Client.on_message(filters.command("clonebroadcast") & filters.user(OWNER_ID))
 async def bc_handler(client: Client, message: Message):
     """Owner တစ်ယောက်တည်းပဲ Clone အားလုံးကို Broadcast ခိုင်းမယ်"""
     if len(message.command) < 2:
-        return await message.reply_text("`/broadcast [စာသား]`")
+        return await message.reply_text("`/clonebroadcast [စာသား]`")
     
     text = message.text.split(None, 1)[1]
     await message.reply_text(f"🚀 Clone {len(running_clones)} ခုမှ Broadcast စတင်နေပြီ...")
