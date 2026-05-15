@@ -38,8 +38,8 @@ async def start_cmd(client: Client, message: Message):
     user = message.from_user
     
     welcome_final = (
-        f"Welcome {user.mention} ✨\n\n"
-        "**အချစ်များ မှ ကြိုဆိုပါတယ်ဗျာ။**\n"
+        f"**Welcome** {user.mention} ✨\n\n"
+        "**ကြိုဆိုပါတယ်ဗျာ။**\n"
         "**Auto Reply နဲ့ Group Management Bot တစ်ခုဖြစ်ပါတယ်။**\n"
         "**အချစ်ရေးများလည်းမေးလို့ရပါတယ် /love ဖြင့်။**\n"
         "**သိလိုရာများကို /help တွေကိုနှိပ်ပြီး လေ့လာနိုင်ပါတယ်ဗျာ။**"
