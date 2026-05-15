@@ -45,12 +45,8 @@ async def get_user_info(client: Client, message: Message):
             f"🔗 **Username:** {username}\n"
             f"📝 **Bio:** \n{bio}\n"
             f"🌟 **Premium:** {is_premium}\n\n"
-            "👥 **Group Information**\n"
-            "━━━━━━━━━━━━━━━━━━\n"
-            f"🏷️ **Group Name:** {chat_title}\n"
-            f"🆔 **Group ID:** `{chat_id}`\n\n"
-            f"✨ **Requested by:** {message.from_user.mention}"
-        )
+            f"━━━━━━━━━━━━━━━━━━"
+         )
         
         await message.reply_text(info_text)
         
