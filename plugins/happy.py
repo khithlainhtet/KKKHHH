@@ -115,10 +115,9 @@ async def happy_handler(client, message):
     
     # Message ပုံစံအသစ်
     response_text = (
-        f"**{user_name}**\n\n"
-        f"{quote}\n"
-        f"━━━━━━━━━━━━━━\n"
-        f"**စိတ်ညစ်တိုင်း မပျော်ဘူးဆိုတာ မရှိဘူး**"
+        f"**{user_name}**\n"
+         f"━━━━━━━━━━━━━━\n"
+        f"{quote}"
     )
     
     await message.reply_text(response_text)
